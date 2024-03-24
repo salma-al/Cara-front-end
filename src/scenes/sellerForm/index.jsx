@@ -57,14 +57,14 @@ const Index = () => {
         };
 
        const postres = await axios.post(
-          `http://localhost:3001/products/sellerProducts`,
+          `https://backend-last-v.onrender.com/products/sellerProducts`,
           formData,
           header
         ).then(async(postres)=>{
          values.Id=postres.data.data.id
       
           const response = await axios.patch(
-            `http://localhost:3001/user/${decode.user.userID}`,
+            `https://backend-last-v.onrender.com/user/${decode.user.userID}`,
             { sellerProducts: [...seller.sellerProducts, values] },
             
           ).then((response)=>{

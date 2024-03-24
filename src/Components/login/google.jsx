@@ -63,7 +63,7 @@
 
 //     console.log(phoneNumber);
 //     axios
-//       .post("http://localhost:3001/user/reg", {
+//       .post("https://backend-last-v.onrender.com/user/reg", {
 //         sellerProducts: [],
 //         phone: phoneNumber,
 //         name: userData.name,

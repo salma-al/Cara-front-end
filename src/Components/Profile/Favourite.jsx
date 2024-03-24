@@ -11,7 +11,7 @@ export default function Favourite({ userData }) {
   const fetchProduct = async (productId) => {
     try {
       const { data } = await axios.get(
-        `http://localhost:3001/products/${productId}`
+        `https://backend-last-v.onrender.com/products/${productId}`
       );
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export default function Favourite({ userData }) {
       // console.log(userData.userID)
       try {
         const wishlistData = await axios.get(
-          `http://localhost:3001/user/${userData.userID}`
+          `https://backend-last-v.onrender.com/user/${userData.userID}`
         );
         // console.log(wishlistData.data[0])
         const wishlist = wishlistData?.data[0]?.wishlist;
@@ -50,7 +50,7 @@ export default function Favourite({ userData }) {
       (id) => id !== product.id
     );
     const { status } = await axios.patch(
-      `http://localhost:3001/user/${userData.userID}`,
+      `https://backend-last-v.onrender.com/user/${userData.userID}`,
       { wishlist: updatedWishList }
     );
     if (status === 200) {

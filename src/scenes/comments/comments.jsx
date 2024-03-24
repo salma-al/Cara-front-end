@@ -18,7 +18,7 @@ const Team = () => {
     console.log(id);
     try {
       const response = await axios.delete(
-        `http://localhost:3001/comments/${id}`
+        `https://backend-last-v.onrender.com/comments/${id}`
       );
       console.log(response);
       getData();
@@ -99,7 +99,7 @@ const Team = () => {
 
   const getData = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/comments');
+      const response = await axios.get('https://backend-last-v.onrender.com/comments');
       console.log(response);
       setMockDataContacts(response.data);
     } catch (error) {

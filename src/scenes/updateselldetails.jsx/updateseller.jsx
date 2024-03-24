@@ -49,7 +49,7 @@ if (JWT) {
         'x-auth-token': JWT,
       }
     };
-    const response = await axios.patch(`http://localhost:3001/user/${decode.user.userID}`, {
+    const response = await axios.patch(`https://backend-last-v.onrender.com/user/${decode.user.userID}`, {
         header, 
         sellerProducts: [...fiterseller,formValues] // Send the productId to be deleted in the request body
        }).then(()=>{

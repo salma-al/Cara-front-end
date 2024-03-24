@@ -39,7 +39,7 @@ const Cart = () => {
         uniqueSortedArr = [...uniqueSortedArr];
         const productPromises = uniqueSortedArr.map(async (id, i) => {
           const { data } = await axios.get(
-            "http://localhost:3001/products/" + id
+            "https://backend-last-v.onrender.com/products/" + id
           );
           return { ...data, quantity: quantityArr[i] };
         });
@@ -64,7 +64,7 @@ const Cart = () => {
   }, [products]);
 
   async function handleAdd(product) {
-    await axios.patch(`http://localhost:3001/user/${user.userID}`, {
+    await axios.patch(`https://backend-last-v.onrender.com/user/${user.userID}`, {
       cart: [...user.cart, product.id],
     });
     dispatch(getUserAction());
@@ -78,14 +78,14 @@ const Cart = () => {
       updatedCart.splice(indexToRemove, 1);
     }
 
-    await axios.patch(`http://localhost:3001/user/${user.userID}`, {
+    await axios.patch(`https://backend-last-v.onrender.com/user/${user.userID}`, {
       cart: updatedCart,
     });
     dispatch(getUserAction());
   }
 
   async function handleRemove(id) {
-    await axios.patch(`http://localhost:3001/user/${user.userID}`, {
+    await axios.patch(`https://backend-last-v.onrender.com/user/${user.userID}`, {
       cart: user.cart.filter((ID) => ID !== id),
     });
     dispatch(getUserAction());
@@ -107,7 +107,7 @@ const Cart = () => {
     );
 
     const response = await axios.post(
-      "http://localhost:3001/check-out/checkout",
+      "https://backend-last-v.onrender.com/check-out/checkout",
       {
         products: products,
         subtotal: subtotal,

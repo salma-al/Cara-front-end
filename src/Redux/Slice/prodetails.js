@@ -4,7 +4,7 @@ import axios from "axios";
 export const getProductAction = createAsyncThunk(
   "product/getProductAction",
   async (id) => {
-    const { data } = await axios.get(`http://localhost:3001/products/${id}`);
+    const { data } = await axios.get(`https://backend-last-v.onrender.com/products/${id}`);
     return data[0];
   }
 );

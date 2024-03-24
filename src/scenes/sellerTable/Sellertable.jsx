@@ -31,7 +31,7 @@ const SellerTable = () => {
 
 const getdata = async () => {
   try {
-     const response = await axios.get(`http://localhost:3001/user/${decode.user.userID}`);
+     const response = await axios.get(`https://backend-last-v.onrender.com/user/${decode.user.userID}`);
 
      setMockDataContacts(response.data[0].sellerProducts )
   } catch (error) {
@@ -56,12 +56,12 @@ const handleDeleteClick = async (rowId,id, variant) => {
         }
       };
 let fitersellerproducts=user.sellerProducts.filter((item)=>item.productId!==rowId)
-      const response = await axios.patch(`http://localhost:3001/user/${decode.user.userID}`, {
+      const response = await axios.patch(`https://backend-last-v.onrender.com/user/${decode.user.userID}`, {
        header, // Include JWT token in headers
        sellerProducts: [...fitersellerproducts] // Send the productId to be deleted in the request body
       }).then(async()=>{
         dispatch(getUserAction())
-       await axios.delete(`http://localhost:3001/products/${id}`,header).then((res)=>{
+       await axios.delete(`https://backend-last-v.onrender.com/products/${id}`,header).then((res)=>{
         console.log("res",res.data);
        })
       })

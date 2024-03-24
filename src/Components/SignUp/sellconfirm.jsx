@@ -6,7 +6,7 @@ const Sellconfirm = () => {
         const windowFeatures = "left=500,top=100,width=420,height=320";
         const handle = window.open(
             
-          `http://localhost:3000/Message`,
+          `https://cara-front-end.vercel.app/Message`,
           "popupWindow",
           windowFeatures,
         );

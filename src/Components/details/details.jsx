@@ -118,7 +118,7 @@ const Details = () => {
       return toast.warning("Please Log in First");
     }
     const { status } = await axios.patch(
-      `http://localhost:3001/user/${user.userID}`,
+      `https://backend-last-v.onrender.com/user/${user.userID}`,
       { cart: [...user.cart, product.id] }
     );
     if (status === 200) {
@@ -141,7 +141,7 @@ const Details = () => {
   useEffect(() => {
     const getProDetails = async () => {
       await axios
-        .get(`http://localhost:3001/products/${ProductId}`)
+        .get(`https://backend-last-v.onrender.com/products/${ProductId}`)
         .then((response) => {
           setProDetails(response.data);
           // console.log( response.data)
