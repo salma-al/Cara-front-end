@@ -52,6 +52,7 @@ function SignIn() {
 
       if (message === 'Logged-In Successfully') {
         const cookies = new Cookies(null, { path: '/' });
+        console.log(JWT);
 
         const expirationDate = new Date();
         expirationDate.setMonth(expirationDate.getMonth() + 1);
