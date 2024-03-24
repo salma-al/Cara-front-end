@@ -11,7 +11,8 @@ import {
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { NavLink, useNavigate } from 'react-router-dom';
-import Google from '../Components/login/google';
+// import Google from '../Components/login/google';
+import Cookies from 'universal-cookie';
 
 function SignIn() {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ function SignIn() {
 
     try {
       const {
-        data: { message },
+        data: { message, JWT },
       } = await axios.post(
         'https://backend-last-v.onrender.com/user/log',
         { email: formData.email, password: formData.password },
@@ -50,6 +51,12 @@ function SignIn() {
       );
 
       if (message === 'Logged-In Successfully') {
+        const cookies = new Cookies(null, { path: '/' });
+
+        const expirationDate = new Date();
+        expirationDate.setMonth(expirationDate.getMonth() + 1);
+        cookies.set('x-auth-token', JWT, { expires: expirationDate });
+
         navigate('/');
       } else if (message === 'Invalid Email Or Password !!') {
         toast.error(message);
