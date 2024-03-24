@@ -20,7 +20,7 @@ export default function Card({ product }) {
       return toast.warning('Please Log in First');
     }
     const { status } = await axios.patch(
-      `http://localhost:3001/user/${user.userID}`,
+      `https://backend-last-v.onrender.com/user/${user.userID}`,
       { cart: [...user.cart, product.id] }
     );
     if (status === 200) {
@@ -48,7 +48,7 @@ export default function Card({ product }) {
     if (user?.wishlist?.includes(product.id)) {
       const updatedWishList = user?.wishlist.filter((id) => id !== product.id);
       const { status } = await axios.patch(
-        `http://localhost:3001/user/${user.userID}`,
+        `https://backend-last-v.onrender.com/user/${user.userID}`,
         { wishlist: updatedWishList }
       );
       if (status === 200) {
@@ -68,7 +68,7 @@ export default function Card({ product }) {
       }
     }
     const { status } = await axios.patch(
-      `http://localhost:3001/user/${user.userID}`,
+      `https://backend-last-v.onrender.com/user/${user.userID}`,
       { wishlist: [...user?.wishlist, product.id] }
     );
     if (status === 200) {
@@ -91,7 +91,7 @@ export default function Card({ product }) {
   async function handleNavigate(id) {
     if (user) {
       await axios
-        .patch(`http://localhost:3001/user/${user?.userID}`, {
+        .patch(`https://backend-last-v.onrender.com/user/${user?.userID}`, {
           recent: [id, ...user.recent],
         })
         .then(() => {
