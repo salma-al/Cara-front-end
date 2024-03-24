@@ -184,10 +184,10 @@ function SignIn() {
               </MDBBtn>
 
               <hr className="my-4" />
-              <p>or sign in with</p>
+              {/* <p>or sign in with</p>
               <div className="d-flex gap-4">
                 <Google className="" />
-              </div>
+              </div> */}
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
