@@ -62,7 +62,7 @@ export default memo(function Featured() {
             },
             breakpoints: {
               900: { perPage: 3 },
-              640: { perPage: 2 },
+              640: { perPage: 1 },
             },
           }}
           extensions={{ AutoScroll }}
