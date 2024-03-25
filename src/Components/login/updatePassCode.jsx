@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cookies from 'universal-cookie';
 
 const ConfirmButton = styled.button`
   height: 4.125rem;
@@ -171,7 +172,15 @@ const UpdatePassCode = () => {
           code: +code,
         })
         .then((response) => {
+
           if (response.data.message === "Account Verified") {
+            const cookies = new Cookies(null, { path: '/' });
+            // console.log(JWT);
+    
+            const expirationDate = new Date();
+            expirationDate.setMonth(expirationDate.getMonth() + 1);
+            cookies.set('x-auth-token', response.data.JWT, { expires: expirationDate });
+    
             toast.success("Correct Code");
             navigate("/updatePassForm");
           } else {

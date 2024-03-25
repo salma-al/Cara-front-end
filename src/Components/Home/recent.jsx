@@ -12,7 +12,7 @@ const Recent = () => {
   useEffect(() => {
     async function getData() {
       if (user) {
-        console.log(user.recent);
+        // console.log(user.recent);
         const productRequests = user.recent.map(async (productId) => {
           const productResponse = await fetch(
             `https://backend-last-v.onrender.com/products/${productId}`

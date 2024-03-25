@@ -12,6 +12,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
+import Cookies from 'universal-cookie';
 
 function UpdatePassForm() {
   const navigate = useNavigate();
@@ -94,6 +95,13 @@ function UpdatePassForm() {
         { withCredentials: true }
       );
       if (res.data.message === "Password Updated ") {
+        const cookies = new Cookies(null, { path: '/' });
+        // console.log(JWT);
+
+        const expirationDate = new Date();
+        expirationDate.setMonth(expirationDate.getMonth() + 1);
+        cookies.set('x-auth-token', res.data.JWT, { expires: expirationDate });
+
         toast.success("Password updated successfully");
         navigate("/");
       } else {
