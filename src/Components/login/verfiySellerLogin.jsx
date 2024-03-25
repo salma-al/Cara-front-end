@@ -181,7 +181,7 @@ const VerfiySellerLogin = () => {
           } else {
             toast.error("Invalid Code! Please try again");
             setVerificationCode(["", "", "", "", ""]); // Clear input fields
-            inputRefs.current[0].focus(); // Focus on the first input field
+            inputRefs?.current[0]?.focus(); // Focus on the first input field
           }
         })
         .catch((error) => {
