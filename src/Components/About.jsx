@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Section = styled.section`
-  background: '#384158';
+  background: #384158;
   width: 100%;
   height: 40vh;
   background-size: cover;

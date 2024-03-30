@@ -218,7 +218,7 @@ export default function Wishlist() {
 }
 
 const Section = styled.section`
-  background: '#384158';
+  background: #384158;
   width: 100%;
   height: 20vh;
   background-size: cover;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 const Section = styled.section`
-    background: '#384158';
+    background: #384158;
     width: 100%;
     height: 40vh;
     background-size: cover;
