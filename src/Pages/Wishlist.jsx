@@ -218,7 +218,7 @@ export default function Wishlist() {
 }
 
 const Section = styled.section`
-  background-image: url("assets/img/about/banner.png");
+  background: '#384158';
   width: 100%;
   height: 20vh;
   background-size: cover;

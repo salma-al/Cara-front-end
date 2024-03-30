@@ -50,7 +50,7 @@ export default function Shop() {
         <section
           className="container-fluid d-flex flex-column justify-content-center align-items-center text-center"
           style={{
-            backgroundImage: "url('../Assets/img/about/banner.png')",
+            background: '#384158',
             height: "30vh",
             backgroundSize: "cover",
             padding: "1rem",
@@ -59,7 +59,7 @@ export default function Shop() {
           }}
         >
           <h1 className="d-block">{currCat || "#Cara Shop"}</h1>
-          <p style={{ color: "white" }}>We wish you a happy shopping</p>
+          {/* <p style={{ color: "white" }}>We wish you a happy shopping</p> */}
           {subcategory ? <h4 className="d-block">{subcategory}</h4> : ""}
         </section>
 

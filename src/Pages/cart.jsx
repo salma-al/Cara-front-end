@@ -144,7 +144,8 @@ const Cart = () => {
         <section
           className="container-fluid d-flex flex-column justify-content-center align-items-center text-center"
           style={{
-            backgroundImage: "url('./Assets/img/about/banner.png')",
+            // backgroundImage: "url('./Assets/img/about/banner.png')",
+            background: '#384158',
             height: "40vh",
             backgroundSize: "cover",
             padding: "1rem",

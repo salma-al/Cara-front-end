@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Section = styled.section`
-  background-image: url('assets/img/about/banner.png');
+  background: '#384158';
   width: 100%;
   height: 40vh;
   background-size: cover;
